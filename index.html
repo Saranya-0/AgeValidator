@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Validator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Age Validator</h2>
+        <input type="number" id="ageInput" placeholder="Enter Your Age"><br>
+        <button onclick="checkAge()">Check</button>
+        <div id="result"></div>
+
+    </div>
+  <script>
+    function checkAge(){
+        let age = document.getElementById("ageInput").value;
+        let result = document.getElementById("result");
+
+        if(age === ""){
+            result.textContent="Please enter a valid age";
+           
+        }
+        else{
+            age = parseInt(age);
+                if (age < 0) {
+                    result.textContent = "Age cannot be negative.";
+                   
+                } else if (age <= 12) {
+                    result.textContent = "You are classified as: Child.";
+                   
+                } else if (age <= 19) {
+                    result.textContent = "You are classified as: Teenager.";
+                   
+                } else if (age <= 59) {
+                    result.textContent = "You are classified as: Adult.";
+                   
+                } else {
+                    result.textContent = "You are classified as: Senior.";
+                   
+                }
+
+        }
+    }
+
+  </script>
+    
+</body>
+</html>
